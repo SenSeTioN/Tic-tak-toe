@@ -11,15 +11,16 @@ let field = [
 
 function checkWin() {
 	let shot = players[activePlayer];
-	for (let i = 0; i <= 2; i++) {
-		if (
-			(field[i][0] == shot && field[i][1] == shot && field[i][2] == shot) ||
-			(field[0][i] == shot && field[1][i] == shot && field[2][i] == shot) ||
-			(field[0][0] == shot && field[1][1] == shot && field[2][2] == shot) ||
-			(field[0][2] == shot && field[1][1] == shot && field[2][0] == shot)
-		) {
-			return true;
-		}
+	if (
+		(field[0][0] == shot && field[0][1] == shot && field[0][2] == shot) ||
+		(field[0][0] == shot && field[1][0] == shot && field[2][0] == shot) ||
+		(field[0][0] == shot && field[1][1] == shot && field[2][2] == shot) ||
+		(field[2][0] == shot && field[2][1] == shot && field[2][2] == shot) ||
+		(field[1][0] == shot && field[1][1] == shot && field[1][2] == shot) ||
+		(field[0][1] == shot && field[1][1] == shot && field[2][1] == shot) ||
+		(field[0][2] == shot && field[1][2] == shot && field[2][2] == shot)
+	) {
+		return true;
 	}
 }
 
